@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Teacher's Day Channamallayya Sir</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #ff9ce3, #ff66c4, #ff4db3);
+            color: #fff;
+            min-height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+        
+        .flower-border {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            box-sizing: border-box;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+            position: relative;
+            margin: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .teacher-photo-container {
+            position: relative;
+            width: 220px;
+            height: 220px;
+            margin: 0 auto 30px;
+        }
+        
+        .teacher-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid #fff;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            background: #fad0c4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 20;
+            margin: 0 auto;
+        }
+        
+        .teacher-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .photo-flowers {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 15;
+            animation: rotate 20s linear infinite;
+        }
+        
+        .photo-flowers i {
+            position: absolute;
+            font-size: 28px;
+            color:#ff0000;
+        }
+        
+        .photo-flowers i:nth-child(1) { top: 0; left: 50%; transform: translateX(-50%); }
+        .photo-flowers i:nth-child(2) { top: 50%; right: 0; transform: translateY(-50%); }
+        .photo-flowers i:nth-child(3) { bottom: 0; left: 50%; transform: translateX(-50%); }
+        .photo-flowers i:nth-child(4) { top: 50%; left: 0; transform: translateY(-50%); }
+        .photo-flowers i:nth-child(5) { top: 15%; right: 15%; }
+        .photo-flowers i:nth-child(6) { bottom: 15%; right: 15%; }
+        .photo-flowers i:nth-child(7) { bottom: 15%; left: 15%; }
+        .photo-flowers i:nth-child(8) { top: 15%; left: 15%; }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        h1 {
+            font-size: 3.2rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(to right, #f9d923, #ff6b6b, #4ecdc4, #42a5f5);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: rainbow 5s linear infinite;
+        }
+        
+        @keyframes rainbow {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
+        }
+        
+        .wave-text {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 20px 0;
+            animation: wave 3s infinite;
+            color: #008000;
+            text-shadow: 0 0 10px rgba(255, 235, 59, 0.5);
+        }
+        
+        @keyframes wave {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .teacher-details {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .detail-item {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 1s ease-out;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .detail-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.25);
+        }
+        
+        .detail-item i {
+            margin-right: 15px;
+            font-size: 1.5rem;
+            color: #ffeb3b;
+            min-width: 30px;
+            text-align: center;
+        }
+        
+        .detail-item span {
+            font-size: 1.3rem;
+            font-weight: 500;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .detail-item:nth-child(1) { animation-delay: 0.1s; }
+        .detail-item:nth-child(2) { animation-delay: 0.2s; }
+        .detail-item:nth-child(3) { animation-delay: 0.3s; }
+        .detail-item:nth-child(4) { animation-delay: 0.4s; }
+        
+        .message {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            margin: 25px 0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            font-style: italic;
+        }
+        
+        .call-btn {
+            background: linear-gradient(to right, #4CAF50, #8BC34A);
+            color: white;
+            border: none;
+            padding: 16px 45px;
+            font-size: 1.3rem;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 20;
+        }
+        
+        .call-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            background: linear-gradient(to right, #43A047, #7CB342);
+        }
+        
+        .song-btn {
+            background: linear-gradient(to right, #FF512F, #DD2476);
+            color: white;
+            border: none;
+            padding: 16px 45px;
+            font-size: 1.3rem;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 20;
+        }
+        
+        .song-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            background: linear-gradient(to right, #F09819, #EDDE5D);
+        }
+        
+        /* Popup Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            padding: 40px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            z-index: 100;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            animation: popIn 0.5s forwards;
+        }
+        
+        @keyframes popIn {
+            from { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+            to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.3);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 5px solid #fff;
+            margin: 0 auto 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(45deg, #a1c4fd, #c2e9fb);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .modal-details {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .modal-detail-item {
+            margin: 15px 0;
+            font-size: 1.2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s forwards;
+        }
+        
+        .modal-detail-item:nth-child(1) { animation-delay: 0.2s; }
+        .modal-detail-item:nth-child(2) { animation-delay: 0.4s; }
+        .modal-detail-item:nth-child(3) { animation-delay: 0.6s; }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .flower-circle {
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            animation: rotate 20s linear infinite;
+            z-index: -1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .flower-circle i {
+            position: absolute;
+            font-size: 20px;
+            color: #ffeb3b;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            font-size: 1rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 20;
+        }
+        
+        .telugu-quote {
+            font-size: 1.8rem;
+            margin: 25px 0;
+            color: #008000;
+            text-shadow: 0 0 10px rgba(255, 235, 59, 0.7);
+            font-weight: bold;
+            font-style: italic;
+        }
+        
+        @media (max-width: 600px) {
+            h1 { font-size: 2.2rem; }
+            .wave-text { font-size: 1.8rem; }
+            .teacher-photo { width: 150px; height: 150px; }
+            .detail-item span { font-size: 1.1rem; }
+            .telugu-quote { font-size: 1.4rem; }
+            .modal { padding: 30px 20px; }
+        }
+        
+        .sparkle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #fff;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 5;
+            animation: sparkle 1s forwards;
+        }
+        
+        @keyframes sparkle {
+            from {
+                opacity: 1;
+                transform: translate(0, 0) scale(1);
+            }
+            to {
+                opacity: 0;
+                transform: translate(var(--tx), var(--ty)) scale(0);
+            }
+        }
+        
+        .personal-message {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            text-align: left;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .personal-message i {
+            color: #ffeb3b;
+            margin-right: 10px;
+        }
+        
+        .border-flower {
+            position: absolute;
+            font-size: 24px;
+            color: #ff6b6b;
+            z-index: 2;
+            animation: borderBloom 8s infinite;
+        }
+        
+        @keyframes borderBloom {
+            0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.8; }
+            50% { transform: scale(1.2) rotate(180deg); opacity: 1; }
+        }
+        
+        .falling-flower {
+            position: absolute;
+            font-size: 28px;
+            color: #ff6b6b;
+            user-select: none;
+            z-index: 5;
+            animation: fall linear forwards;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+            pointer-events: none;
+        }
+        
+        @keyframes fall {
+            to {
+                transform: translateY(105vh) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="flower-border" id="flowerBorder"></div>
+    
+    <div class="container">
+        <div class="teacher-photo-container">
+            <div class="photo-flowers">
+                <i class="fas fa-leaf"></i>
+                <i class="fas fa-leaf"></i>
+                <i class="fas fa-leaf"></i>
+                <i class="fas fa-leaf"></i>
+                <i class="fas fa-leaf"></i>
+                <i class="fas fa-leaf"></i>
+                <i class="fas fa-leaf"></i>
+                <i class="fas fa-leaf"></i>
+            </div>
+            <div class="teacher-photo">
+                <!-- Replace with your teacher's photo (teacher-photo.jpg) -->
+                <img src="teacher-photo.jpg" alt="Channamallayya Sir" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <i class="fas fa-user-graduate" style="display: none; font-size: 80px; color: #fff;"></i>
+            </div>
+        </div>
+        
+        <h1>Happy Teacher's Day!</h1>
+        
+        <div class="wave-text">
+            Channamallayya Sir
+        </div>
+        
+        <div class="teacher-details">
+            <div class="detail-item">
+                <i class="fas fa-user"></i>
+                <span>Name: Kondaka Channamallayya(sir)</span>
+            </div>
+            <div class="detail-item">
+                <i class="fas fa-book"></i>
+                <span>Designation: Mathematics Teacher</span>
+            </div>
+            <div class="detail-item">
+                <i class="fas fa-school"></i>
+                <span>School: ZPHS Mandli</span>
+            </div>
+            <div class="detail-item">
+                <i class="fas fa-heart"></i>
+                <span>Created by: U Nagendra (Your's Student)</span>
+            </div>
+        </div>
+        
+        <div class="personal-message">
+            <p><i class="fas fa-hand-holding-heart"></i> Thank you sir! for your support in my educational life and personal life , Your my true Inspirative person sir! </p>       </div>
+        
+        <div class="telugu-quote">
+            "మాతృ దేవో భవ, పితృ దేవో భవ, ఆచార్య  దేవో భవ"
+        </div>
+        
+        <div class="message">
+            "A great teacher takes hand, opens mind, and touches heart."
+        </div>
+        
+        <button class="call-btn" id="callButton">
+            <i class="fas fa-phone-alt"></i> Contact Nagendra
+        </button>
+        
+        <button class="song-btn" id="songButton">
+            <i class="fas fa-music"></i> Play Song
+        </button>
+        
+        <div class="footer">
+            <p>Wishing you joy and success on Teacher's Day and always!</p>
+        </div>
+    </div>
+
+    <!-- Popup Modal -->
+    <div class="modal" id="detailsModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+            
+            <div class="flower-circle">
+                <i class="fas fa-leaf"></i>
+                <i class="fas fa-leaf"></i>
+                <i class="fas fa-leaf"></i>
+                <i class="fas fa-leaf"></i>
+                <i class="fas fa-leaf"></i>
+                <i class="fas fa-leaf"></i>
+                <i class="fas fa-leaf"></i>
+                <i class="fas fa-leaf"></i>
+            </div>
+            
+            <div class="modal-photo">
+                <!-- Replace with your photo (my-photo.jpg) -->
+                <img src="my-photo.jpg" alt="U Nagendra" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <i class="fas fa-user" style="display: none; font-size: 50px; color: #fff;"></i>
+            </div>
+            
+            <div class="modal-details">
+                <div class="modal-detail-item">
+                    <i class="fas fa-user-graduate"></i> U Nagendra
+                </div>
+                <div class="modal-detail-item">
+                    <i class="fas fa-university"></i> MITS Madanapalle
+                </div>
+                <div class="modal-detail-item">
+                    <i class="fas fa-phone"></i> Phone: 9030273152
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="bgMusic">
+        <!-- Replace with your song file (song.mp3) -->
+        <source src="mp3.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // Get modal element
+        const modal = document.getElementById('detailsModal');
+        const callButton = document.getElementById('callButton');
+        const closeButton = document.getElementById('closeModal');
+        const songButton = document.getElementById('songButton');
+        
+        // Music elements
+        const audio = document.getElementById('bgMusic');
+        let isPlaying = false;
+        
+        // Function to open modal
+        function openModal() {
+            modal.style.display = 'block';
+            createSparkles();
+        }
+        
+        // Function to close modal
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+        
+        // Function to toggle song
+        function toggleSong() {
+            if (isPlaying) {
+                audio.pause();
+                songButton.innerHTML = '<i class="fas fa-music"></i> Play Song';
+            } else {
+                audio.play();
+                audio.volume = 1.0; // Full volume
+                songButton.innerHTML = '<i class="fas fa-pause"></i> Pause Song';
+            }
+            isPlaying = !isPlaying;
+        }
+        
+        // Event listeners
+        callButton.addEventListener('click', openModal);
+        closeButton.addEventListener('click', closeModal);
+        songButton.addEventListener('click', toggleSong);
+        
+        // Close modal if clicked outside of content
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+        
+        // Create border flowers
+        function createBorderFlowers() {
+            const border = document.getElementById('flowerBorder');
+            
+            // Top border
+            for (let i = 0; i < 25; i++) {
+                const flower = document.createElement('div');
+                flower.innerHTML = '<i class="fas fa-leaf"></i>';
+                flower.classList.add('border-flower');
+                flower.style.top = '10px';
+                flower.style.left = (i * 4) + '%';
+                flower.style.fontSize = (20 + Math.random() * 15) + 'px';
+                flower.style.color = getRandomColor();
+                flower.style.animationDelay = (Math.random() * 5) + 's';
+                border.appendChild(flower);
+            }
+            
+            // Bottom border
+            for (let i = 0; i < 25; i++) {
+                const flower = document.createElement('div');
+                flower.innerHTML = '<i class="fas fa-leaf"></i>';
+                flower.classList.add('border-flower');
+                flower.style.bottom = '10px';
+                flower.style.left = (i * 4) + '%';
+                flower.style.fontSize = (20 + Math.random() * 15) + 'px';
+                flower.style.color = getRandomColor();
+                flower.style.animationDelay = (Math.random() * 5) + 's';
+                border.appendChild(flower);
+            }
+            
+            // Left border
+            for (let i = 0; i < 15; i++) {
+                const flower = document.createElement('div');
+                flower.innerHTML = '<i class="fas fa-leaf"></i>';
+                flower.classList.add('border-flower');
+                flower.style.left = '10px';
+                flower.style.top = (i * 7) + '%';
+                flower.style.fontSize = (20 + Math.random() * 15) + 'px';
+                flower.style.color = getRandomColor();
+                flower.style.animationDelay = (Math.random() * 5) + 's';
+                border.appendChild(flower);
+            }
+            
+            // Right border
+            for (let i = 0; i < 15; i++) {
+                const flower = document.createElement('div');
+                flower.innerHTML = '<i class="fas fa-leaf"></i>';
+                flower.classList.add('border-flower');
+                flower.style.right = '10px';
+                flower.style.top = (i * 7) + '%';
+                flower.style.fontSize = (20 + Math.random() * 15) + 'px';
+                flower.style.color = getRandomColor();
+                flower.style.animationDelay = (Math.random() * 5) + 's';
+                border.appendChild(flower);
+            }
+        }
+        
+        // Create falling flowers
+        function createFallingFlower() {
+            const flower = document.createElement('div');
+            flower.innerHTML = '<i class="fas fa-leaf"></i>';
+            flower.classList.add('falling-flower');
+            
+            // Random position
+            flower.style.left = Math.random() * 100 + 'vw';
+            
+            // Random size
+            const size = Math.random() * 25 + 15;
+            flower.style.fontSize = size + 'px';
+            
+            // Random rotation
+            const rotation = Math.random() * 360;
+            flower.style.transform = `rotate(${rotation}deg)`;
+            
+            // Random color
+            flower.style.color = getRandomColor();
+            
+            // Random fall duration
+            const duration = Math.random() * 5 + 5;
+            flower.style.animationDuration = duration + 's';
+            
+            // Set z-index to be in front of content
+            flower.style.zIndex = 5;
+            
+            document.body.appendChild(flower);
+            
+            // Remove flower after animation completes
+            setTimeout(() => {
+                flower.remove();
+            }, duration * 1000);
+        }
+        
+        function getRandomColor() {
+            const colors = ['#ff6b6b', '#ff9ff3', '#feca57', '#48dbfb', '#1dd1a1', '#ff7979', '#badc58', '#ffbe76'];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+        
+        // Create falling flowers continuously
+        setInterval(createFallingFlower, 200);
+        
+        // Create some initial flowers
+        for (let i = 0; i < 25; i++) {
+            setTimeout(createFallingFlower, i * 150);
+        }
+        
+        // Create border flowers on load
+        window.addEventListener('load', createBorderFlowers);
+        
+        // Create sparkle effect
+        function createSparkles() {
+            for (let i = 0; i < 30; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.classList.add('sparkle');
+                
+                // Random position around the button
+                const button = document.querySelector('.call-btn');
+                const rect = button.getBoundingClientRect();
+                const x = rect.left + rect.width/2;
+                const y = rect.top + rect.height/2;
+                
+                sparkle.style.left = x + 'px';
+                sparkle.style.top = y + 'px';
+                
+                // Random direction and distance
+                const angle = Math.random() * Math.PI * 2;
+                const distance = 50 + Math.random() * 100;
+                const tx = Math.cos(angle) * distance;
+                const ty = Math.sin(angle) * distance;
+                
+                sparkle.style.setProperty('--tx', tx + 'px');
+                sparkle.style.setProperty('--ty', ty + 'px');
+                
+                // Random size and color
+                const size = 3 + Math.random() * 7;
+                sparkle.style.width = size + 'px';
+                sparkle.style.height = size + 'px';
+                
+                sparkle.style.background = getRandomColor();
+                
+                document.body.appendChild(sparkle);
+                
+                // Remove sparkle after animation
+                setTimeout(() => {
+                    sparkle.remove();
+                }, 1000);
+            }
+        }
+        
+        // Add initial sparkles when page loads
+        window.addEventListener('load', () => {
+            setTimeout(createSparkles, 1000);
+        });
+    </script>
+</body>
+</html>
